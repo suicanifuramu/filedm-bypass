@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler pages dev . --port 3000",
+    "deploy": "wrangler pages deploy . --project-name filedm-bypass"
+  },
+  "devDependencies": {
+    "wrangler": "^4.103.0"
+  }
+}
