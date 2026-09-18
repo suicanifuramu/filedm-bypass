@@ -31,7 +31,7 @@ export async function getDirectUrl(channel) {
     return r.text();
   });
 
-  const m = html.match(/href="(https:\/\/cleansoftwaredl\.com\/lp\?[^"]+)"/);
+  const m = html.match(/href="(https:\/\/cleansoftw\.[a-z]+\/lp\?[^"]+)"/);
   if (!m) throw new Error("LP URL not found");
   const lpUrl = m[1];
 
@@ -53,7 +53,7 @@ export async function getDirectUrl(channel) {
 
   const key = "SCI_multipart";
   const xord = xorWithKey(info.id, key);
-  const s = crc32(xord).toString(16).padStart(8, "0");
+  const s = crc32(xord).toString(16).padStart(8, "0").toUpperCase();
 
   return `${info.payload}?id=${info.id}&s=${s}`;
 }
